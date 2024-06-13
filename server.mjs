@@ -30,7 +30,7 @@ app.use(`${API_ROOT}/login`, loginRouter);
 // Error Handling Middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send('Something went wrong!');
+    res.status(500).send('Something went wrong!!');
 });
 
 // Environment Variable Check
