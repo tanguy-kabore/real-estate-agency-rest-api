@@ -44,10 +44,10 @@ for (const variable of requiredEnvVariables) {
 
 const startServer = async () => {
     try {
-        await connectDB(process.env.MONGODB_URL);
+        connectDB(process.env.MONGODB_URL);
         app.listen(port, () => {
             if (process.env.NODE_ENV === 'production') {
-                console.log(`Server is running on production URL https://real-estate-agency-rest-api.vercel.app`);
+                console.log(`Server is running on production URL`);
             } else {
                 console.log(`Server is running on port http://localhost:${port}`);
             }
