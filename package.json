@@ -2,10 +2,10 @@
   "name": "real-estate-agency-rest-api",
   "version": "1.0.0",
   "description": "Explore the Node-Express-MongoDB-API – a potent REST API for a real estate agency's backend. Built with Node.js, Express, and MongoDB, it offers robust performance and seamless data management. Elevate your real estate application with modern web development practices.",
-  "main": "index.js",
+  "main": "server.mjs",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.mjs",
+    "start": "node server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
