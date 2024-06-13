@@ -11,7 +11,7 @@ import loginRouter from './routes/login.routes.js';
 dotenv.config();
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT || 8080; // Utiliser le port configuré par Vercel ou 8080 en local
 const API_ROOT = '/api/v1';
 
 app.use(cors());
@@ -45,10 +45,16 @@ for (const variable of requiredEnvVariables) {
 const startServer = async () => {
     try {
         connectDB(process.env.MONGODB_URL);
-        app.listen(port, () => console.log(`Server is running on port http://localhost:${port}`));
+        app.listen(port, () => {
+            if (process.env.NODE_ENV === 'production') {
+                console.log(`Server is running on production URL https://real-estate-agency-rest-api.vercel.app`);
+            } else {
+                console.log(`Server is running on port http://localhost:${port}`);
+            }
+        });
     } catch (error) {
         console.error(error);
     }
-}
+};
 
 startServer();
